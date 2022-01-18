@@ -1,0 +1,93 @@
+<?php 
+// tell browsers what type of data return
+header('Content-Type:application/json');
+
+// '*' define all website access this api, or define custom website name inplace of '*'.  
+header('Access-Control-Allow-Origin: *');
+
+// method post
+header('Access-Control-Allow-Methods: POST');
+
+// allow access all headers(use it for security reasons).
+header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
+
+/*
+Authorization :- authorized to origin header.
+X-Requested-With :- only ajax send request.
+*/
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+/*
+"php://input" :- this can read all type of row data which is received(xml,json).
+file_get_content :- takes row data(json format) which is received.
+*/
+
+
+require '../connect.php';
+require '../function.php';
+
+
+$f_name =  $data['f_name'];
+$l_name =  $data['l_name'];
+$email =  $data['email'];
+$password =  $data['password'];
+$tutor_subjects =  $data['subjects'];
+$state = $data['state'];
+$city = $data['city'];
+$mobile = $data['mobile'];
+
+$class = 'N/A';
+$adhar = 'N/A';
+$demo = 'N/A';
+$home = 'N/A';
+$digi = 'N/A';
+$board = 'N/A';
+$platform = 'N/A';
+$medium = 'N/A';
+$area = 'N/A';
+$qualification = 'N/A';
+$description = 'N/A';
+$profile = 'N/A';
+$trn_date = date("Y-m-d H:i:s");
+$slug = slugify(8, $f_name);
+ 
+// check tutor registed or not
+$tutor = tutorCheck('tutor_info',$mobile, $email);
+
+// for subject array
+// --------------------------
+$subjects="";  
+foreach($tutor_subjects as $sub)  
+   {  
+      $subjects .= $sub.",";  
+   }  
+//---------------------------
+
+
+if($tutor){
+
+ // tutor email and contact already exist;
+    echo json_encode(array('message'=>'Mobile no. or email already exists!','status'=>false));
+
+}else{
+
+// new user insert
+    $sql = "INSERT into tutor_info (f_name,l_name,email,password,class,mobile,adhar,demo,home,digi,subjects,board,platform,medium,state,city,area,qualification,description,profile,slug,trn_date) values ('{$f_name}','{$l_name}','{$email}','{$password}','{$class}','{$mobile}','{$adhar}','{$demo}','{$home}','{$digi}','{$subjects}','{$board}','{$platform}','{$medium}','{$state}','{$city}','{$area}','{$qualification}','{$description}','{$profile}','{$slug}','{$trn_date}')";
+
+    $query = mysqli_query($con, $sql) or die("Query Failed");
+
+    if($query){
+
+       echo json_encode(array('message'=>'success','status'=>true));
+
+   }else{
+
+       echo json_encode(array('message'=>'failed','status'=>false));
+
+   }
+
+}
+
+
+?>

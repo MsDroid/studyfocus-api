@@ -1,0 +1,76 @@
+<?php 
+// tell browsers what type of data return
+header('Content-Type:application/json');
+
+// '*' define all website access this api, or define custom website name inplace of '*'.  
+header('Access-Control-Allow-Origin: *');
+
+// method post
+header('Access-Control-Allow-Methods: POST');
+
+// allow access all headers(use it for security reasons).
+header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
+
+/*
+Authorization :- authorized to origin header.
+X-Requested-With :- only ajax send request.
+*/
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+/*
+"php://input" :- this can read all type of row data which is received(xml,json).
+file_get_content :- takes row data(json format) which is received.
+*/
+
+require '../connect.php';
+require '../function.php';
+
+
+$stu_name = $data['stu_name'];
+$stu_class = $data['stu_class'];
+$email = $data['email'];
+$password = $data['password'];
+$stu_mobile = $data['stu_mobile'];
+$stu_subjects = $data['stu_subjects'];
+$tran_date = date("Y-m-d H:i:s");
+$state = $data['state'];
+$city = $data['city'];
+$trn_date = date("Y-m-d H:i:s");
+
+// for subject array
+// --------------------------
+$subjects="";  
+foreach($stu_subjects as $sub)  
+   {  
+      $subjects .= $sub.",";  
+   }  
+//---------------------------
+
+$user = studentCheck('student_info',$stu_mobile, $email);
+
+
+if($user){
+    // user email and mobile already exist;
+    echo json_encode(array('message'=>'Mobile no. or email already exists!','status'=>false));
+}else{
+    // new user insert
+    $sql = "INSERT into student_info (stu_name,stu_class,email,password,stu_mobile,stu_subjects,tran_date,state,city,trn_date) values ('{$stu_name}','{$stu_class}','{$email}','{$password}','{$stu_mobile}','{$subjects}','{$tran_date}','{$state}','{$city}','{$trn_date}')";
+
+    $query = mysqli_query($con, $sql) or die("Query Failed");
+
+    if($query){
+
+       echo json_encode(array('message'=>'success','status'=>true));
+
+   }else{
+
+       echo json_encode(array('message'=>'failed','status'=>false));
+
+   }
+   
+}
+
+
+
+?>

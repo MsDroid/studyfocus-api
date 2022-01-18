@@ -1,0 +1,6 @@
+[28-Dec-2021 10:31:04 UTC] PHP Warning:  A non-numeric value encountered in /home/u565281308/domains/studyfocus.in/public_html/cybertechMedia/api/new-study-api/reset-password/send-secure-pin.php on line 67
+[28-Dec-2021 10:31:04 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/u565281308/domains/studyfocus.in/public_html/cybertechMedia/api/new-study-api/reset-password/PHPMailer/PHPMailerAutoload.php on line 45
+[28-Dec-2021 10:31:23 UTC] PHP Warning:  A non-numeric value encountered in /home/u565281308/domains/studyfocus.in/public_html/cybertechMedia/api/new-study-api/reset-password/send-secure-pin.php on line 67
+[28-Dec-2021 10:31:23 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/u565281308/domains/studyfocus.in/public_html/cybertechMedia/api/new-study-api/reset-password/PHPMailer/PHPMailerAutoload.php on line 45
+[28-Dec-2021 10:31:56 UTC] PHP Notice:  Undefined variable: error in /home/u565281308/domains/studyfocus.in/public_html/cybertechMedia/api/new-study-api/reset-password/reset-password.php on line 54
+[28-Dec-2021 10:32:11 UTC] PHP Notice:  Undefined variable: error in /home/u565281308/domains/studyfocus.in/public_html/cybertechMedia/api/new-study-api/reset-password/reset-password.php on line 25

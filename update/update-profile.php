@@ -1,0 +1,96 @@
+<?php 
+// tell browsers what type of data return
+header('Content-Type:application/json');
+
+// '*' define all website access this api, or define custom website name inplace of '*'.  
+header('Access-Control-Allow-Origin: *');
+
+// method post
+header('Access-Control-Allow-Methods: POST');
+
+// allow access all headers(use it for security reasons).
+header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
+
+/*
+Authorization :- authorized to origin header.
+X-Requested-With :- only ajax send request.
+*/
+
+// $_POST = json_decode(file_get_contents("php://input"), true);
+
+/*
+"php://input" :- this can read all type of row data which is received(xml,json).
+file_get_content :- takes row data(json format) which is received.
+*/
+
+
+require '../connect.php';
+require '../function.php';
+
+// print_r($_POST);
+// exit();
+
+$id = $_POST['tut_id'];
+$f_name =  $_POST['name'];
+$email =  $_POST['email'];
+$password =  $_POST['password'];
+$mobile = $_POST['mobile'];
+
+$slug = slugify(8, $f_name);
+
+$uploadPath = "../../../../img/newtutor/"; 
+
+   if(!empty($_FILES["profile"]["name"])) { 
+        // File info 
+        $fileName = date("mjYHis")."_".basename($_FILES["profile"]["name"]); 
+        $imageUploadPath = $uploadPath . $fileName; 
+        $fileType = pathinfo($imageUploadPath, PATHINFO_EXTENSION); 
+         
+        // Allow certain file formats 
+        $allowTypes = array('jpg','png','jpeg','gif'); 
+        if(in_array($fileType, $allowTypes)){ 
+            // Image temp source 
+            $imageTemp = $_FILES["profile"]["tmp_name"]; 
+             
+            // Compress size and upload image 
+            $compressedImage = compressImage($imageTemp, $imageUploadPath, 75); 
+             
+            if($compressedImage){ 
+                $sql = "UPDATE `tutor_info` SET `f_name`='$f_name',`email`='$email',`password`='$password',`mobile`='$mobile',`slug`='$slug', `profile`='$fileName' WHERE id = $id";
+
+                   $query = mysqli_query($con, $sql) or die("Query Failed");
+
+                   if($query){
+
+                      echo json_encode(array('message'=>'success','status'=>201));
+
+                  }else{
+
+                      echo json_encode(array('message'=>'failed','status'=>false));
+
+                  }
+                
+            } 
+        }   
+    }
+
+    else {
+
+$sql = "UPDATE `tutor_info` SET `f_name`='$f_name',`email`='$email',`password`='$password',`mobile`='$mobile',`slug`='$slug' WHERE id = $id";
+
+                   $query = mysqli_query($con, $sql) or die("Query Failed");
+
+                   if($query){
+
+                      echo json_encode(array('message'=>'success','status'=>201));
+
+                  }else{
+
+                      echo json_encode(array('message'=>'failed','status'=>false));
+
+                  }
+    }
+
+ 
+
+?>

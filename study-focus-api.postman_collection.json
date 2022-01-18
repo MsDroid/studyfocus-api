@@ -1,0 +1,900 @@
+{
+	"info": {
+		"_postman_id": "09ccb474-6abc-41d3-b961-a8c1ea14fbf9",
+		"name": "study-focus-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\" : \"institute\",\r\n    \"email\" : \"soonu@gmail.com\",\r\n    \"password\" : \"i87ud7\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/login/login.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"login",
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "search",
+			"item": [
+				{
+					"name": "search-tutor-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"state\" : 1,\r\n    \"city\" : 1,\r\n    \"digi\" : 0,\r\n    \"subjects\" : \"hindi\"\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/search/search-tutors.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"search",
+								"search-tutors.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-agency-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"state\" : 1,\r\n    \"city\" : 1,\r\n    \"digi\" : 0,\r\n    \"subjects\" : \"hindi\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/search/search-agency.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"search",
+								"search-agency.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "blog",
+			"item": [
+				{
+					"name": "blog_fetchSingle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"blog_id\" : 41\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/blog/blog_fetchSingle.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"blog",
+								"blog_fetchSingle.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "blog_fetchAll",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/blog/blog_fetchAll.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"blog",
+								"blog_fetchAll.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"item": [
+				{
+					"name": "tutor_profile_update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"f_name\" : \"Rohit Kumar\",\r\n    \"email\" : \"rohit@gmail.com\",\r\n    \"password\" : \"Roh8765\", \r\n    \"mobile\" : 98765456,\r\n    \"profile\" : \"8937_ld.jpg\",\r\n    \"id\" : 249 \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/profile/tutor_profile_update.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"profile",
+								"tutor_profile_update.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student_profile_update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Rohit Kumar\",\r\n    \"password\" : \"Roh8765\", \r\n    \"id\" : 3\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/profile/student_profile_update.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"profile",
+								"student_profile_update.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tutor_profile_edit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 3\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/profile/tutor_profile_edit.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"profile",
+								"tutor_profile_edit.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student_profile_edit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 3\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/profile/student_profile_edit.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"profile",
+								"student_profile_edit.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "agency_profile_edit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 38\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/profile/agency_profile_edit.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"profile",
+								"agency_profile_edit.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "agency_profile_update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "aplica",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"sohan\",\r\n    \"password\" : \"i87ud7\",\r\n    \"email\" : \"sohan@gmail.com\",\r\n    \"profile\" : \"dfje.jpg\",\r\n    \"id\" : 43\r\n\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/profile/agency_profile_update.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"profile",
+								"agency_profile_update.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "register",
+			"item": [
+				{
+					"name": "student-register-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stu_name\" : \"rohan\",\r\n    \"stu_class\" : 6,\r\n    \"email\" : \"rrohan@gmail.com\",\r\n    \"password\" : \"A9876534\",\r\n    \"stu_mobile\" : 8937364987,\r\n    \"stu_subjects\" : [\"maths\",\"hindi\",\"english\"],\r\n    \"state\" : 2,\r\n    \"city\" : 91\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/register/student-api.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"register",
+								"student-api.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tutor-register-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"f_name\" : \"amit\",\r\n    \"l_name\" : \"kumar\",\r\n    \"email\" : \"nidek23@gmail.com\",\r\n    \"password\" : \"123456\",\r\n    \"subjects\" : [\"hindi\",\"english\",\"math\"],\r\n    \"state\" : 25,\r\n    \"city\" : 2,\r\n    \"mobile\" : \"8818731112\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/register/tutor-api.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"register",
+								"tutor-api.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "agency-register-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Sumit\",\r\n    \"class\" : [\"class-5\",\"class-9\",\"class-10\",\"class-12\"],\r\n    \"email\" : \"Suumitt@gmail.com\",\r\n    \"password\" : \"12345\",\r\n    \"mobile\" : 8895765687,\r\n    \"subjects\" : [\"hindi\",\"english\",\"maths\"],\r\n    \"board\" : [\"JAC\",\"bihar\",\"delhi\"],\r\n    \"medium\" : [\"hindi\",\"english\"],\r\n    \"certificate\" : \"8746373_img.jpg\",\r\n    \"profile\" : \"6373_img.jpg\", \r\n    \"demo\" : 1,\r\n    \"digi\" : 1,\r\n    \"state\" : 87,\r\n    \"city\" : 99,\r\n    \"area\" : 12,\r\n    \"description\" : \"this is description\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/register/agency-api.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"register",
+								"agency-api.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "slider",
+			"item": [
+				{
+					"name": "slider-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/slider/slider-api.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"slider",
+								"slider-api.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "city",
+			"item": [
+				{
+					"name": "city-fetchAll-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"state_id\" : 12\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/city/city_fetchAll.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"city",
+								"city_fetchAll.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "city-single-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Transfer-Encoding",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 12\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/city/city_fetchSingle.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"city",
+								"city_fetchSingle.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "states",
+			"item": [
+				{
+					"name": "state-fetchAll-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/state/state_fetchAll.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"state",
+								"state_fetchAll.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "state-fetchSingle-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 3\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/state/state_fetchSingle.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"state",
+								"state_fetchSingle.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subject",
+			"item": [
+				{
+					"name": "subject-fetchAll-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/subject/subject_fetchAll.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"subject",
+								"subject_fetchAll.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subject-fetchSingle-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 33\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/subject/subject_fetchSingle.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"subject",
+								"subject_fetchSingle.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contact",
+			"item": [
+				{
+					"name": "contact-details-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/contact/contact-detail-api.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"contact",
+								"contact-detail-api.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "platform",
+			"item": [
+				{
+					"name": "platform-fetchall-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/teach-platform/platform_fetchAll.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"teach-platform",
+								"platform_fetchAll.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "platform-fetchSingle-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 3\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/teach-platform/platform_fetchSingle.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"teach-platform",
+								"platform_fetchSingle.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "class",
+			"item": [
+				{
+					"name": "class-fetchAll-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/class/class_fetchAll.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"class",
+								"class_fetchAll.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "class-fetchSingle-api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 15\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/cybertechMedia/api/new-study-api/class/class_fetchSingle.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"cybertechMedia",
+								"api",
+								"new-study-api",
+								"class",
+								"class_fetchSingle.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "initial data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/cybertechMedia/api/new-study-api/initialData.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"cybertechMedia",
+						"api",
+						"new-study-api",
+						"initialData.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
